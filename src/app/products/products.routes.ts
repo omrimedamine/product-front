@@ -1,6 +1,7 @@
 import { inject } from "@angular/core";
 import { ActivatedRouteSnapshot, Routes } from "@angular/router";
 import { ProductListComponent } from "./features/product-list/product-list.component";
+import {LoginComponent} from "../login/login.component";
 
 export const PRODUCTS_ROUTES: Routes = [
 	{

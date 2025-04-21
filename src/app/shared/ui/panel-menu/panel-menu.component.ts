@@ -3,13 +3,15 @@ import {
   } from "@angular/core";
 import { MenuItem } from "primeng/api";
   import { PanelMenuModule } from 'primeng/panelmenu';
-  
+import {NavComponent} from "../../../nav/nav.component";
+
   @Component({
     selector: "app-panel-menu",
     standalone: true,
-    imports: [PanelMenuModule],
+    imports: [PanelMenuModule, NavComponent],
     template: `
         <p-panelMenu [model]="items" styleClass="w-full" />
+        <app-nav></app-nav>
     `
   })
   export class PanelMenuComponent {
@@ -24,7 +26,11 @@ import { MenuItem } from "primeng/api";
             label: 'Produits',
             icon: 'pi pi-barcode',
             routerLink: ['/products/list']
-        }
+        },
+      {
+        label: 'Contact',
+        icon: 'pi pi-envelope',
+        routerLink: ['/contact']
+      }
     ]
   }
-  

@@ -1,0 +1,66 @@
+.cart-button-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-badge {
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+
+  p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #666;
+  }
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .placeholder-image {
+    width: 50px;
+    height: 50px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+  }
+}
+
+.cart-table {
+  ::ng-deep .p-datatable-wrapper {
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+  }
+}
+
+.cart-total {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: right;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+
+  button {
+    min-width: 120px;
+  }
+}

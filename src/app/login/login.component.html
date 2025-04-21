@@ -1,0 +1,66 @@
+<div class="login-container">
+  <div class="card login-card">
+    <h2 class="text-center mb-4">Connexion</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="field mb-4">
+        <label for="email" class="block mb-2">Email</label>
+        <span class="p-input-icon-left w-full">
+          <i class="pi pi-envelope"></i>
+          <input
+            type="email"
+            id="email"
+            pInputText
+            formControlName="email"
+            class="w-full"
+            placeholder="Entrez votre email"
+          />
+        </span>
+
+        @if (submitted() && email.errors) {
+          <small class="p-error block mt-2">
+            @if (email.errors['required']) {
+              Email requis
+            } @else if (email.errors['email']) {
+              Format d'email invalide
+            }
+          </small>
+        }
+      </div>
+
+      <div class="field mb-4">
+        <label for="password" class="block mb-2">Mot de passe</label>
+        <span class="p-input-icon-left w-full">
+          <i class="pi pi-lock"></i>
+          <p-password
+            id="password"
+            formControlName="password"
+            [toggleMask]="true"
+            [feedback]="false"
+            styleClass="w-full"
+            placeholder="Entrez votre mot de passe"
+            [inputStyle]="{'width': '100%'}"
+          ></p-password>
+        </span>
+
+        @if (submitted() && password.errors?.['required']) {
+          <small class="p-error block mt-2">Mot de passe requis</small>
+        }
+      </div>
+
+      <div class="field mb-4">
+        <p-button
+          type="submit"
+          [label]="loading() ? 'Connexion en cours...' : 'Se connecter'"
+          icon="pi pi-sign-in"
+          styleClass="w-full"
+          [loading]="loading()"
+        ></p-button>
+      </div>
+
+      @if (error()) {
+        <p-message severity="danger" [text]="error()" styleClass="w-full"></p-message>
+      }
+    </form>
+  </div>
+</div>

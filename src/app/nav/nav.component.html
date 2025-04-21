@@ -1,0 +1,6 @@
+<div class="custom-logout">
+@if(authService.isAuthenticated())
+{
+  <p-button label="Déconnexion" icon="pi pi-sign-out" (onClick)="logout()"></p-button>
+}
+</div>
